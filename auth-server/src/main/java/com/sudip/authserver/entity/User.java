@@ -2,8 +2,11 @@ package com.sudip.authserver.entity;
 
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Collection;
 
 
 @Entity
@@ -32,6 +35,12 @@ public class User implements Serializable {
 
     @Column(name = "credential_exired", nullable = false)
     private boolean credentialExpird;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "users_roles", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
+    @OrderBy
+    @JsonIgnore
+    private Collection<Role> role;
 
     public String getId() {
         return id;

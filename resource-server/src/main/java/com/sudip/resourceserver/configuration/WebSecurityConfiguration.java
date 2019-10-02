@@ -11,9 +11,11 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 
-@EnableWebSecurity
-@Configuration
+
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
+
+    @Autowired
+    AccessDeniedEntryPoint accessDeniedEntryPoint;
 
     @Bean
     public PasswordEncoder getPasswordEncoder() {
@@ -29,9 +31,8 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(final HttpSecurity http) throws Exception {
         http.csrf().disable()
-                .authorizeRequests().anyRequest().authenticated()
-                .antMatchers("/oauth/token").permitAll()
-                .and().httpBasic();
+                .authorizeRequests().anyRequest().authenticated().and().exceptionHandling()
+                .accessDeniedHandler(accessDeniedEntryPoint);
     }
 
 }

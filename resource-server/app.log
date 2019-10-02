@@ -1,0 +1,8 @@
+2019-06-01 08:23:02,852 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8h17m36s767ms14µs).
+2019-06-01 08:44:46,952 DEBUG org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext [Thread-7] Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@593ae3b2, started on Thu May 30 22:29:50 NPT 2019
+2019-06-01 08:44:48,502 DEBUG org.springframework.jmx.export.annotation.AnnotationMBeanExporter [Thread-7] Unregistering JMX-exposed beans on shutdown
+2019-06-01 08:44:48,517 DEBUG org.springframework.jmx.export.annotation.AnnotationMBeanExporter [Thread-7] Unregistering JMX-exposed beans
+2019-06-01 08:44:48,549 INFO org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor [Thread-7] Shutting down ExecutorService 'applicationTaskExecutor'
+2019-06-01 08:44:48,736 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [Thread-7] Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-06-01 08:44:49,332 INFO com.zaxxer.hikari.HikariDataSource [Thread-7] HikariPool-1 - Shutdown initiated...
+2019-06-01 08:44:49,379 INFO com.zaxxer.hikari.HikariDataSource [Thread-7] HikariPool-1 - Shutdown completed.

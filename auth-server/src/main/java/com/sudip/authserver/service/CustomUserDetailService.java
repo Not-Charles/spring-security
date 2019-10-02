@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 public class CustomUserDetailService implements UserDetailsService {
 
     @Autowired
-    @Lazy
     private UserRepository userRepository;
 
     @Override
